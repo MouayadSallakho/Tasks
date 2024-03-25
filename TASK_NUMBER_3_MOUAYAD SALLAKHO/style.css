@@ -1,0 +1,472 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* start star */
+.star{
+    display: inline-block;
+    margin-bottom: 20px;
+    position: relative;
+}
+.star::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background-color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -60px;
+}
+.star::after{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background-color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -60px;
+}
+.star i{
+    font-size: 30px;
+}
+/* End star */
+/* start container */
+.container{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width:768px)
+{
+    .container{
+        width:750px;
+    }
+}
+/* Medium */
+@media (min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/* End container */
+
+/* start header */
+header{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(45, 54, 104);
+    box-shadow: 0px 0px 11px 4px rgb(31, 25, 31) ;
+    position: relative;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px ;
+    padding-bottom: 10px ;
+}
+header .container h1{
+    color: white;
+}
+header .container ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+header .container ul li{
+    margin-left: 30px;
+    position: relative;   
+}
+header .container ul li a{
+    color: white;
+    text-decoration: none;
+}
+header .container ul .action::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: aqua;
+    bottom: -18px;
+    left: 0px;
+
+}
+header .container ul li:not(:first-child)::before{
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background-color: aqua;
+    bottom: -18px;
+    left: 0px;
+    transition: 0.5s;
+}
+header .container ul li:not(:first-child):hover::before{
+    width: 100%;
+    height: 3px;
+}
+
+@media (max-width:768px){
+    header .container{
+        display: block;
+        padding-bottom: 20px;
+    }
+    header .container h1{
+        margin-bottom: 13px;
+        text-align: center;
+    }
+    header .container ul li{
+        padding: 0px 20px  ;
+        margin-left: auto;
+        margin-right: auto ;
+
+    }
+}
+
+/* End  header */
+
+/* Start main-section */
+.main-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 57px);
+    background-color: rgb(41, 16, 107);
+    position: relative;
+}
+.main-section::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f309";
+    position: absolute;
+    font-weight: 900;
+    color: white;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    animation-name: down;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+.main-section div{
+    text-align: center;
+    color: white;
+}
+.main-section div img{
+    border-radius: 50%;
+    margin-bottom: 20px;
+    width: 200px;
+}
+.main-section div h1{
+    margin-bottom: 20px;
+}
+.main-section div p{
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+.main-section div button{
+    font-size: 20px;
+    padding: 10px 20px ;
+    cur
+}
+
+.main-section div button i{
+    padding-right: 10px;
+}
+/* End  main-section */
+
+/* Start portofoolio */
+.portofolio{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.portofolio .main-head{
+    text-align: center;
+}
+.portofolio .main-head h1{
+    margin-bottom: 20px;
+}
+.portofolio .main-head span::after,
+.portofolio .main-head span::before{
+    background-color: black;
+}
+.portofolio .cards{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.portofolio .cards div{
+    width: 350px;
+    height: 350px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.portofolio .cards img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.portofolio .cards .img1{
+    background-color: rgb(196, 196, 183);
+}
+.portofolio .cards .img2{
+    background-color: rgb(124, 131, 146);
+}
+.portofolio .cards .img3{
+    background-color: rgb(136, 179, 143);
+}
+.portofolio .cards .img4{
+    background-color: rgb(165, 150, 153);
+}
+.portofolio .cards .img5{
+    background-color: rgb(134, 178, 184);
+}
+.portofolio .cards .img6{
+    background-color: rgb(224, 203, 194);
+}
+@media (max-width:992px){
+    .portofolio .cards{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .portofolio .cards div{
+        width: calc(50% - 30px);
+    }
+}
+@media (max-width:768px){
+    .portofolio .cards div{
+        width: 350px;
+    }
+}
+
+
+/* End portofoolio */
+
+/* Start About */
+.about{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: rgb(41, 16, 107);
+}
+.about .main-head{
+    text-align: center;
+}
+.about .main-head h1{
+    color: white;
+    margin-bottom: 20px;
+}
+.about .main-head span{
+    color: white;
+}
+.about .contact{
+    margin-bottom: 40px;
+}
+.about .contact .text{
+    display: flex;
+    justify-content: center;
+}
+.about .contact .text p{
+    color: white;
+    width: 400px;
+    line-height: 2;
+    margin: 0px 40px;
+    padding: 10px;
+}
+.about .cc{
+    display: flex;
+    justify-content: center;
+}
+.about .cc button{
+    cursor: pointer;
+    font-size: 20px;
+    padding: 15px 30px;
+    background-color: rgb(41, 16, 107);
+    border: 2px solid white;
+    color: white;
+    border-radius: 4px; 
+}
+.about .cc button i{
+    padding-right: 10px;
+}
+
+@media(max-width:768px){
+    .about .contact .text{
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .about .contact .text P{
+        width: 100%;
+        margin: 0px 40px;
+    }
+}
+/* END About */
+
+/* start contact */
+.contact-me {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.contact-me .main-head{
+    text-align: center;
+}
+.contact-me .main-head h1{
+    margin-bottom: 20px;
+}
+.contact-me .main-head span::after,
+.contact-me .main-head span::before{
+    background-color: black;
+}
+
+.contact-me .contect-inputs{
+    display: flex;
+    justify-content: center;
+}
+.contact-me form input{
+    display: block;
+    padding: 20px 0px;
+    width: 500px;
+    border: none;
+    border-bottom: 1px solid;
+    margin-bottom: 10px;
+    transition: 1s;
+}
+.contact-me form input:focus{
+    outline: none;
+}
+.contact-me form input::placeholder{
+    opacity: 1;
+    transition: 1s;
+}
+.contact-me form input:focus::placeholder{
+    opacity: 0;
+}
+.contact-me form input[type="submit"]{
+    cursor: pointer;
+    width: fit-content;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    background-color: rgb(88, 141, 141);
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+}
+.contact-me form input[type="submit"]:hover{
+    background-color: rgb(51, 90, 90);
+
+}
+@media(max-width:768px) {
+    .contact-me form input{
+       width: 100%;
+    }
+}
+/* end  contact */
+
+/* start footer */
+footer .info{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: rgb(41, 16, 107);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: white;
+}
+footer .info div{
+    width: 350px;
+    text-align: center;
+}
+footer .info div h2{
+    margin-bottom: 15px;
+}
+footer .info p{
+    color: #c9c3c3;
+    line-height: 1.7;
+}
+footer .info i{
+    background-color: rgb(41, 16, 107);
+    padding: 13px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+footer .copy{
+    background-color: rgb(67 67 154);
+    padding: 20px 0px;
+    text-align: center;
+    color: white;
+}
+footer a{
+    color: aqua;
+}
+@media (max-width:992px){
+    footer .info div{
+        margin-bottom: 40px;
+    }
+}
+@media (max-width:768px){
+    footer .info {
+        padding: 40px 0px;
+    }   
+}
+footer i{
+    transition: 0.4s;
+}
+footer .lin:hover{
+    color: blue;
+    background-color: white;
+}
+footer .twi:hover{
+    color: rgb(53, 53, 138);
+    background-color: white;
+}
+footer .fac:hover{
+    color: rgb(0, 0, 255);
+    background-color: white;
+}
+footer .bas:hover{
+    color: rgb(241, 216, 69);
+    background-color: white;
+}
+footer span{
+    color: aqua;
+    font-weight: 700;
+}
+/* end footer */        
+
+
+@keyframes down{
+    0%{
+        bottom: 15px;
+    }
+    50%{
+        bottom: 0px;
+    }
+    100%{
+        bottom: 15px;
+    }
+}
+@media(max-width:768px) {
+    .contact-me form input{
+       width: 100%;
+    }
+}
